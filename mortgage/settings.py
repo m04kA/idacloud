@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -78,12 +79,11 @@ WSGI_APPLICATION = 'mortgage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'host': DB_SETTINGS["host"],
-        'user': DB_SETTINGS["user"],
-        'dbname': DB_SETTINGS["dbname"],
+        'HOST': DB_SETTINGS["host"],
+        'USER': DB_SETTINGS["user"],
         'NAME': DB_SETTINGS["dbname"],
         'PASSWORD': DB_SETTINGS["PASSWORD"],
-        'port': DB_SETTINGS["port"],
+        'PORT': DB_SETTINGS["port"],
     }
 }
 
