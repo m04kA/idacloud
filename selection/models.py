@@ -1,18 +1,9 @@
 from django.db import models
 
 
-class Bank(models.Model):
-    """Сущность банка"""
-    name = models.CharField("Название", unique=True, max_length=50)
-
-    class Meta:
-        verbose_name = "Банк"
-        verbose_name_plural = "Банки"
-
-
 class Offer(models.Model):
     """Сущность ипотечное предложение"""
-    bank = models.ForeignKey(Bank, verbose_name="Привязанный банк", on_delete=models.CASCADE, related_name="Bank_Offer")
+    bank = models.CharField("Название банка", max_length=50)
     term_min = models.IntegerField("Минимум лет выплат")
     term_max = models.IntegerField("Максимум лет выплат")
     rate_min = models.FloatField("Минимальный процент выплат")
