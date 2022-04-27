@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import datetime
 from pathlib import Path
-from mortgage.CONFIG_MY import DB_SETTINGS
+from mortgage.CONFIG import DB_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'selection',
 ]
 
 MIDDLEWARE = [
