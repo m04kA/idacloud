@@ -1,12 +1,15 @@
-from django.urls import path
+from django.urls import path, include
 
 from . import views
+from selection.views import OfferViewSet
+
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'offer', OfferViewSet)
 
 urlpatterns = [
-    path('offers/', views.OffersListView.as_view()),
-    path('offer_create/', views.OfferCreateView.as_view()),
-    path('offer_update/<int:pk>/', views.OfferUpdateView.as_view()),
-    path('offer_delete/<int:pk>/', views.OfferDeleteView.as_view()),
+    path("", include(router.urls))
 ]
 
 
