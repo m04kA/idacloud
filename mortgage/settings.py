@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'selection',
-    'django_filters'
+    'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -157,5 +158,6 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',  # You can of Internet form
 
-    ]
+    ],
+    'ORDERING_PARAM': 'order'
 }

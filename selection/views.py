@@ -6,9 +6,15 @@ from selection.serializers import OfferSerializer, OfferFilterSerializer
 from rest_framework import viewsets, filters
 
 
-
 class OfferViewSet(viewsets.ModelViewSet):
-    """CRUD for offer"""
+    """
+    CRUD for offer
+    GET:
+    optional params:
+    price - int
+    deposit - float
+    term - int
+    """
     queryset = Offer.objects.all()
     serializer_class = OfferSerializer
     filter_backends = [filters.OrderingFilter]

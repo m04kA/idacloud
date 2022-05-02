@@ -1,7 +1,7 @@
 DB_SETTINGS = {
     "host": "127.0.0.1",
-    "user": "postgres",
-    "dbname": "idacloud",
-    "PASSWORD": "password",
+    "user": "",
+    "dbname": "",
+    "PASSWORD": "",
     "port": 5432
 }
