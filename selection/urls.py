@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'offer', OfferViewSet)
 
 urlpatterns = [
-    path("", include(router.urls))
+    path("", include(router.urls)),
 ]
 
 

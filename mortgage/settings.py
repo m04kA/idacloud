@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import datetime
 from pathlib import Path
-from mortgage.CONFIG_MY import DB_SETTINGS
+from mortgage.CONFIG import DB_SETTINGS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'selection',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -124,31 +125,32 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-    },
-    "handlers": {
-        "file": {
-            "class": "logging.FileHandler",
-            "level": "INFO",
-            "formatter": "verbose",
-            "filename": f"{BASE_DIR}/logs/{datetime.datetime.today().date()}.log"
-        },
-    },
-    "loggers": {
-        "offer": {
-            "level": "INFO",
-            "handlers": ["file"],
-            "propagate": True
-        }
-    }
-}
+
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "formatters": {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style': '{',
+#         },
+#     },
+#     "handlers": {
+#         "file": {
+#             "class": "logging.FileHandler",
+#             "level": "INFO",
+#             "formatter": "verbose",
+#             "filename": f"{BASE_DIR}/logs/{datetime.datetime.today().date()}.log"
+#         },
+#     },
+#     "loggers": {
+#         "offer": {
+#             "level": "INFO",
+#             "handlers": ["file"],
+#             "propagate": True
+#         }
+#     }
+# }
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
